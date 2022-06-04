@@ -15,3 +15,5 @@ export const compress = async () => {
   const destination = fs.createWriteStream(OUTPUT_PATH);
   source.pipe(gzip).pipe(destination);
 };
+
+await compress();

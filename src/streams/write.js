@@ -21,3 +21,5 @@ export const write = async () => {
     writeStream.write(input + '\n');
   });
 };
+
+await write();

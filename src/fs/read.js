@@ -17,3 +17,5 @@ export const read = async () => {
   const content = await readFile(path.join(PATH, NAME), { encoding: 'utf-8' });
   console.log(content);
 };
+
+await read();

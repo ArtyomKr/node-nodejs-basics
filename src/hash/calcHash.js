@@ -13,3 +13,5 @@ export const calculateHash = async () => {
   const content = await readFile(path.join(PATH, FILE_NAME), { encoding: 'utf-8' });
   return createHash('sha256').update(content).digest('hex');
 };
+
+await calculateHash();

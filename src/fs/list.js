@@ -16,3 +16,5 @@ export const list = async () => {
   const files = await readdir(PATH);
   console.log(files);
 };
+
+await list();

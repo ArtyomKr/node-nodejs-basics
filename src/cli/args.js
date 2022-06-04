@@ -7,3 +7,5 @@ export const parseArgs = () => {
   result ? console.log(result.substr(0, result.length - 2)) :
     console.log('No arguments found');
 };
+
+await parseArgs();

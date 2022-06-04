@@ -17,5 +17,7 @@ export const rename = async () => {
     throw new Error('FS operation failed');
   }
 
-  fs.rename(OLD_FILE, NEW_FILE);
+  await fs.rename(OLD_FILE, NEW_FILE);
 };
+
+await rename();

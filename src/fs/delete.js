@@ -16,3 +16,5 @@ export const remove = async () => {
 
   unlink(path.join(PATH, FILE_TO_REMOVE));
 };
+
+await remove();

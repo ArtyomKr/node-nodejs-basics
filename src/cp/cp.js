@@ -6,4 +6,4 @@ export const spawnChildProcess = async (args) => {
   process.stdin.pipe(child.stdin);
 };
 
-spawnChildProcess([ 'a', 'b']);
+await spawnChildProcess([ 'a', 'b', 'test']);

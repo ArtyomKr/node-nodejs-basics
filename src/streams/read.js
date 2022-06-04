@@ -14,3 +14,5 @@ export const read = async () => {
     process.stdout.write(chunk);
   });
 };
+
+await read();

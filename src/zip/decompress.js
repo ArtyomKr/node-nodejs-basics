@@ -15,3 +15,5 @@ export const decompress = async () => {
   const destination = fs.createWriteStream(OUTPUT_PATH);
   source.pipe(unzip).pipe(destination);
 };
+
+await decompress();

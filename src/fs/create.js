@@ -14,5 +14,7 @@ export const create = async () => {
     throw new Error('FS operation failed');
   }
 
-  writeFile(path.join(PATH, NAME), 'I am fresh and young');
+  await writeFile(path.join(PATH, NAME), 'I am fresh and young');
 };
+
+await create();
