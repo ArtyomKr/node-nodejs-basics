@@ -1,9 +1,16 @@
 import { Worker } from 'worker_threads';
 import { cpus } from 'os';
+import { fileURLToPath } from 'url';
+import path, { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const PATH = path.join(__dirname, './worker.js');
 
 export const performCalculations = async () => {
   const createWorkerPromise = (n) => {
-    const worker = new Worker('./worker.js', {  workerData: {n: n} });
+    const worker = new Worker(PATH, {  workerData: {n: n} });
     return new Promise((resolve) => {
       const result = { status: 'error', data: null };
       worker.on('message', message => {
