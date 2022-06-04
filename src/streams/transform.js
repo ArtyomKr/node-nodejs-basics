@@ -12,5 +12,3 @@ export const transform = async () => {
     process.stdout.write(input.split('').reverse().join('') + '\n');
   });
 };
-
-transform();
