@@ -6,7 +6,7 @@ export const parseEnv = () => {
   }
 
   result ? console.log(result.substr(0, result.length - 2)) :
-    console.log('No variables with RSS_ prefix found');
+    console.log('No variables with RSS_ prefix');
 };
 
 await parseEnv();

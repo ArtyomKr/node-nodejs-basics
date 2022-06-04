@@ -14,6 +14,7 @@ export const decompress = async () => {
   const source = fs.createReadStream(PATH);
   const destination = fs.createWriteStream(OUTPUT_PATH);
   source.pipe(unzip).pipe(destination);
+  console.log('File successfully decompressed');
 };
 
 await decompress();

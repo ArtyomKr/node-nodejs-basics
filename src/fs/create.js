@@ -15,6 +15,7 @@ export const create = async () => {
   }
 
   await writeFile(path.join(PATH, NAME), 'I am fresh and young');
+  console.log('File created!')
 };
 
 await create();

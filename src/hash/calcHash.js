@@ -14,4 +14,4 @@ export const calculateHash = async () => {
   return createHash('sha256').update(content).digest('hex');
 };
 
-await calculateHash();
+console.log(await calculateHash());

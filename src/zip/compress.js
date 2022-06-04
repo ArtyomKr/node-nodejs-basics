@@ -14,6 +14,7 @@ export const compress = async () => {
   const source = fs.createReadStream(PATH);
   const destination = fs.createWriteStream(OUTPUT_PATH);
   source.pipe(gzip).pipe(destination);
+  console.log('File successfully compressed');
 };
 
 await compress();

@@ -14,7 +14,8 @@ export const remove = async () => {
     throw new Error('FS operation failed');
   }
 
-  unlink(path.join(PATH, FILE_TO_REMOVE));
+  await unlink(path.join(PATH, FILE_TO_REMOVE));
+  console.log('File deleted!')
 };
 
 await remove();

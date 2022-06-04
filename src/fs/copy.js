@@ -15,6 +15,7 @@ export const copy = async () => {
   }
 
   await cp(PATH, COPY_PATH, { recursive: true });
+  console.log('Files copied!')
 };
 
 await copy();

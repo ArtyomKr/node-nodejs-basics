@@ -18,6 +18,7 @@ export const rename = async () => {
   }
 
   await fs.rename(OLD_FILE, NEW_FILE);
+  console.log('File renamed!')
 };
 
 await rename();
