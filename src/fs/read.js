@@ -2,8 +2,7 @@ import path, { dirname } from 'path';
 import { readdir, readFile } from 'fs/promises';
 import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const PATH = path.join(__dirname, './files');
 const NAME = 'fileToRead.txt';

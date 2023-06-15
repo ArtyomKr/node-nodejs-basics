@@ -10,6 +10,7 @@
     "fs:copy": "node src/fs/copy.js",
     "fs:rename": "node src/fs/rename.js",
     "fs:delete": "node src/fs/delete.js",
+    "fs:list": "node src/fs/list.js",
     "cli:env": "node src/cli/env.js",
     "cli:args": "node src/cli/args.js",
     "modules": "node src/modules/cjsToEsm.mjs",
