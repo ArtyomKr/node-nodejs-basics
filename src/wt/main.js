@@ -9,7 +9,7 @@ const PATH = path.join(__dirname, './worker.js');
 
 const performCalculations = async () => {
   const createWorkerPromise = (n) => {
-    const worker = new Worker(PATH, {  workerData: {n: n} });
+    const worker = new Worker(PATH, { workerData: {n: n} });
     return new Promise((resolve) => {
       const result = { status: 'error', data: null };
       worker.on('message', message => {
@@ -19,8 +19,7 @@ const performCalculations = async () => {
       });
       worker.on('error', () => resolve(result));
       worker.on('exit', (code) => {
-        if (code !== 0)
-          resolve(result);
+        if (code !== 0) resolve(result);
       });
     });
   };
@@ -28,7 +27,7 @@ const performCalculations = async () => {
   const emptyArr = new Array(cpus().length).fill(null);
   const promises = emptyArr.map((item, pos) => createWorkerPromise(pos + 10));
 
-  return Promise.all(promises);
+  console.log(await Promise.all(promises));
 };
 
-console.log(await performCalculations());
+await performCalculations();
