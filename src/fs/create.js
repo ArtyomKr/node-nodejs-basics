@@ -7,7 +7,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const PATH = path.join(__dirname, './files');
 const NAME = 'fresh.txt';
 
-export const create = async () => {
+const create = async () => {
   const dirFiles = await readdir(PATH);
   if (dirFiles.includes(NAME)) {
     throw new Error('FS operation failed');

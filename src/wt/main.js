@@ -3,12 +3,11 @@ import { cpus } from 'os';
 import { fileURLToPath } from 'url';
 import path, { dirname } from 'path';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const PATH = path.join(__dirname, './worker.js');
 
-export const performCalculations = async () => {
+const performCalculations = async () => {
   const createWorkerPromise = (n) => {
     const worker = new Worker(PATH, {  workerData: {n: n} });
     return new Promise((resolve) => {

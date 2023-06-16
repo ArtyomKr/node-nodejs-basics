@@ -3,15 +3,15 @@ import { readFile } from 'fs/promises';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const PATH = path.join(__dirname, './files');
 const FILE_NAME = 'fileToCalculateHashFor.txt';
 
-export const calculateHash = async () => {
+const calculateHash = async () => {
   const content = await readFile(path.join(PATH, FILE_NAME), { encoding: 'utf-8' });
-  return createHash('sha256').update(content).digest('hex');
+  const hash = createHash('sha256').update(content).digest('hex');
+  console.log(hash);
 };
 
-console.log(await calculateHash());
+await calculateHash();

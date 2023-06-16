@@ -1,6 +1,6 @@
 import { Transform } from 'stream';
 
-export const transform = async () => {
+const transform = async () => {
   process.stdout.write('Type text and press Enter to reverse it: \n');
 
   const reverse = new Transform({

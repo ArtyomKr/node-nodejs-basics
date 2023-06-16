@@ -7,7 +7,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const PATH = path.join(__dirname, './files');
 const FILE_TO_REMOVE = 'fileToRemove.txt';
 
-export const remove = async () => {
+const remove = async () => {
   const files = await readdir(PATH);
   if (!files.includes(FILE_TO_REMOVE)) {
     throw new Error('FS operation failed');
